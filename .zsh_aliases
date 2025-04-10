@@ -1,0 +1,6 @@
+alias ls='eza --icons'
+alias ll='eza -la --icons'
+alias cat='bat'
+alias grep='rg'
+alias vim='nvim'
+alias cleanmem="sync; echo 3 | sudo tee /proc/sys/vm/drop_caches"
