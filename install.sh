@@ -29,3 +29,15 @@ fi
 echo "✅ Установка shell-окружения завершена!"
 echo "🔁 Запуск ZSH..."
 exec zsh
+
+# 🛠 Установка Mint Optimization скрипта и systemd-сервиса
+echo "🛠 Установка оптимизации Linux Mint..."
+sudo cp mint-optimize.sh /usr/local/bin/
+sudo chmod +x /usr/local/bin/mint-optimize.sh
+
+sudo cp mint-optimize.service /etc/systemd/system/
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable mint-optimize.service
+
+echo "✅ Mint Optimization добавлен в автозапуск systemd"
