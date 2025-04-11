@@ -41,3 +41,17 @@ sudo systemctl daemon-reload
 sudo systemctl enable mint-optimize.service
 
 echo "✅ Mint Optimization добавлен в автозапуск systemd"
+echo ""
+echo "🎉 Установка завершена!"
+echo "✅ Mint Optimization будет запускаться при каждой загрузке системы"
+echo "🌀 ZSH с Powerlevel10k активен"
+echo "📁 Конфиги скопированы"
+echo ""
+
+# Если есть notify-send и активная сессия, покажем уведомление:
+if command -v notify-send >/dev/null; then
+  su -l $SUDO_USER -c "DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send '✅ Dotfiles install complete!' 'Все готово к бою 😎'"
+fi
+
+# Запускаем ZSH
+exec zsh
